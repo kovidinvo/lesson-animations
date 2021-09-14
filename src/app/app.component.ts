@@ -11,6 +11,6 @@ export class AppComponent {
   constructor(public route: ActivatedRoute,private router: Router) {}
 
   ngOnInit(): void {
-      this.router.navigate(['force'])
+      this.router.navigate(['gravity'])
   }
 }
