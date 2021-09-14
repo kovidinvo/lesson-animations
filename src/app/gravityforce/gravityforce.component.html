@@ -1,7 +1,49 @@
 
-
 <div class="row">
-    <div class="col"><canvas #canvas width="600" height="600"></canvas>
+    <div class="col"><canvas #canvas [width]="width" [height]="height"></canvas>
+    </div>    
+    <div class="col">
+        <div class="row">
+            <div class="col"><h3>Управление</h3></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form onsubmit="false">
+                    <div class="mb-4">
+                        <label for="angle" class="form-label">Угол</label>
+                        <input type="number" class="form-control" name="angle" [(ngModel)]="angle" >
+                    </div>
+                    <div class="mb-4">
+                        <label for="legnth" class="form-label">Cила броска</label>
+                        <input type="number" class="form-control" name="length" [(ngModel)]="force" >
+                    </div>
+                    <div class="mb-4">
+                        <label for="speed" class="form-label">Шаг времени</label>
+                        <input type="number" class="form-control" name="speed" [(ngModel)]="timestep" >
+                    </div>
+                    <div class="mb-4">
+                        <label for="speed" class="form-label">Текущее время</label>
+                        <input type="number" class="form-control" name="speed" [(ngModel)]="time" >
+                    </div>
+                    <div class="mb-4">
+                        <label for="speed" class="form-label">Скорость анимации</label>
+                        <input type="number" class="form-control" name="speed" [(ngModel)]="speed" >
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="drawVectors" name="drawVectors">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Рисовать векторы
+                        </label>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4"><button type="button" class="btn btn-success" (click)="drawCanvas()">Нарисовать</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary" (click)="animate()">Запуск</button></div>
+                        <div class="col"><button type="button" class="btn btn-warning" (click)="stopAnimation()">Стоп</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
